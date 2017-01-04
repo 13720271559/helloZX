@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jbit.dao.DeptDao">
+
+    <resultMap type="Dept" id="deptMap"></resultMap>
+
+	<insert id="insertDept" parameterType="Dept">
+	   <selectKey keyProperty="deptno" resultType="int" order="BEFORE">
+	      select SEQ_DEPT.nextval from dual
+	   </selectKey>
+	   insert into dept values(#{deptno},#{dname},#{loc})
+	</insert>
+
+	<select id="findByNo" resultType="Dept">
+		select * from dept where deptno = #{id}
+    </select>
+    
+    <select id="findDept" resultMap="deptMap">
+        select * from dept 
+    </select>
+    
+</mapper>

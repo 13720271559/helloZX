@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 是否开启动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<!-- 编码处理 -->
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<!-- struts标签页面风格 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<!-- 指定上传文件时的临时目录，默认使用 javax.servlet.context.tempdir -->
+	<constant name="struts.multipart.saveDir" value="/tmp" />
+	<!-- 该属性指定Struts 2文件上传中整个请求内容允许的最大字节数 -->
+	<constant name="struts.multipart.maxSize" value="2097152" />
+	
+	<package name="default" namespace="/" extends="struts-default">
+
+	  
+	</package>
+</struts>    
